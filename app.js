@@ -12,8 +12,8 @@ const server = http.createServer(app);
 
 app.post('/', controllers.sendStockData)
 
-server.listen(process.env.PORT, 'localhost', () => {
-  console.log(`Server running at http://localhost:${process.env.PORT}/`);
+app.listen(process.env.PORT, () => {
+    console.log(`Listening on ${process.env.PORT}...`);
 });
 
 module.exports = server
