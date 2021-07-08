@@ -13,7 +13,7 @@ const server = http.createServer(app);
 app.post('/', controllers.sendStockData)
 
 server.listen(process.env.port, 'localhost', () => {
-  console.log(`Server running at http://localhost:3002/`);
+  console.log(`Server running at http://localhost:${process.env.port}/`);
 });
 
 module.exports = server
