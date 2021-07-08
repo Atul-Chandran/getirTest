@@ -1,6 +1,8 @@
 const MongoClient = require('mongodb').MongoClient;
-// const dbConfigDetails = dbDetails.configDetails.databaseDetails;
+const MONGO_URL = process.env.MONGO_URL
+const MONGO_DATABASE = process.env.MONGO_DATABASE
 
+// Sums all the values in the counts array
 function addValuesInArray(array){
     if(array.length){
         let arrayIterator = 0;
@@ -16,7 +18,8 @@ function addValuesInArray(array){
 }
 
 
-function sendStockData(request,response){
+function fetchingData(request,response){
+    var MONGO_TABLE = 'records'
     try{
         var startDate = request.body.startDate;
         var endDate = request.body.endDate;
@@ -25,10 +28,10 @@ function sendStockData(request,response){
 
         if(minCount && maxCount){
             var finalResultArray = [];
-            MongoClient.connect('mongodb+srv://challengeUser:WUMglwNBaydH8Yvu@challenge-xzwqd.mongodb.net/getircase-study?retryWrites=true', function(err, db) {
-                var dbo = db.db('getir-case-study');
+            MongoClient.connect(MONGO_URL, function(err, db) {
+                var dbo = db.db(MONGO_DATABASE);
                 var query = {createdAt: {$lte: new Date(endDate), $gte: new Date(startDate)}}
-                dbo.collection('records').find(query).toArray(async function(err, result) {
+                dbo.collection(MONGO_TABLE).find(query).toArray(async function(err, result) {
                     if(result.length){
                         let resultItertator = 0;
                         while(resultItertator < result.length){
@@ -72,5 +75,5 @@ function sendStockData(request,response){
 }
 
 exports.data = {
-    sendStockData
+    fetchingData
 }

@@ -1,10 +1,5 @@
 const {MongoClient} = require('mongodb');
-const Request = require('jest-express/lib/request').Request;
-const Response = require('jest-express/lib/response').Response;
 const request = require("supertest");
-const controller = require("../controller/gettingData.controller").data;
-process.env.NODE_ENV = "test";
-
 
 const app = require("../app");
 

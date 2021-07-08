@@ -1,0 +1,203 @@
+{
+	"info": {
+		"_postman_id": "5cf23c8b-6e1e-465b-8349-e3bcbfdad30e",
+		"name": "Getir Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Success Response",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"startDate\": \"2016-12-30\",\r\n    \"endDate\": \"2017-01-28\",\r\n    \"minCount\": 2,\r\n    \"maxCount\": 3000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://getirnodetest.herokuapp.com/",
+					"protocol": "https",
+					"host": [
+						"getirnodetest",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"startDate\": \"2016-12-30\",\r\n    \"endDate\": \"2017-01-28\",\r\n    \"minCount\": 2,\r\n    \"maxCount\": 3000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://getirnodetest.herokuapp.com/",
+							"protocol": "https",
+							"host": [
+								"getirnodetest",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "188"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"bc-rXNoQ2JCRGAhOsRlMVJO5g+Y3sk\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 08 Jul 2021 14:38:25 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 0,\n    \"msg\": \"Success\",\n    \"records\": [\n        {\n            \"key\": \"kOKMRjkB\",\n            \"createdAt\": \"2016-12-30T11:56:25.780Z\",\n            \"totalCount\": 120\n        },\n        {\n            \"key\": \"LSyjwviN\",\n            \"createdAt\": \"2016-12-30T01:31:07.831Z\",\n            \"totalCount\": 116\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Failure Response",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"startDate\": \"2016-12-30\",\r\n    \"endDate\": \"2017-01-28\",\r\n    \"minCount\": \"val\",\r\n    \"maxCount\": 3000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://getirnodetest.herokuapp.com/",
+					"protocol": "https",
+					"host": [
+						"getirnodetest",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Failure Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"startDate\": \"2016-12-30\",\r\n    \"endDate\": \"2017-01-28\",\r\n    \"minCount\": \"val\",\r\n    \"maxCount\": 3000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://getirnodetest.herokuapp.com/",
+							"protocol": "https",
+							"host": [
+								"getirnodetest",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "38"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"26-KtmrgzByxkhuNZrcNHC1kNGbZw4\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 08 Jul 2021 14:45:51 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 1,\n    \"msg\": \"Failed\",\n    \"records\": []\n}"
+				}
+			]
+		}
+	]
+}

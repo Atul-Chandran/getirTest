@@ -10,7 +10,7 @@ const controllers = require("./controller/gettingData.controller").data
 app.use(express.json())
 const server = http.createServer(app);
 
-app.post('/', controllers.sendStockData)
+app.post('/', controllers.fetchingData)
 
 app.listen(process.env.PORT, () => {
     console.log(`Listening on ${process.env.PORT}...`);
